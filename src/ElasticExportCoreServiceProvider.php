@@ -2,7 +2,7 @@
 
 namespace ElasticExportCore;
 
-use Illuminate\Support\ServiceProvider;
+use Plenty\Plugin\ServiceProvider;
 
 class ElasticExportCoreServiceProvider extends ServiceProvider
 {
