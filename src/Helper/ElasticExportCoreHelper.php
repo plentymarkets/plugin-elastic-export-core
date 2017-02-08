@@ -28,7 +28,11 @@ use Plenty\Modules\System\Contracts\WebstoreRepositoryContract;
 use Plenty\Modules\System\Models\Webstore;
 use Plenty\Modules\Item\VariationSku\Contracts\VariationSkuRepositoryContract;
 
-class ElasticExportHelper
+/**
+ * Class ElasticExportCoreHelper
+ * @package ElasticExportCore\Helper
+ */
+class ElasticExportCoreHelper
 {
     const SHIPPING_COST_TYPE_FLAT = 'flat';
     const SHIPPING_COST_TYPE_CONFIGURATION = 'configuration';
@@ -135,7 +139,7 @@ class ElasticExportHelper
     private $variationSkuRepository;
 
     /**
-     * ElasticExportHelper constructor.
+     * ElasticExportCoreHelper constructor.
      *
      * @param CategoryBranchRepositoryContract $categoryBranchRepository
      * @param UnitNameRepositoryContract $unitNameRepository
