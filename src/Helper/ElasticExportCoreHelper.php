@@ -560,7 +560,7 @@ class ElasticExportCoreHelper
      * Get shipping cost.
      * @param  int $itemId
      * @param  KeyValue $settings
-     * @param  int|null  $mobId
+     * @param  int|null $mopId
      * @return float|null
      */
     public function getShippingCost($itemId, KeyValue $settings, int $mopId = null)
@@ -767,7 +767,8 @@ class ElasticExportCoreHelper
      * Get base price.
      * @param  array    $item
      * @param  array    $idlItem
-     * @param  string   $separator	= '/'
+     * @param  string   $lang       = 'de'
+     * @param  string   $separator  = '/'
      * @param  bool     $compact    = false
      * @param  bool     $dotPrice   = false
      * @param  string   $currency   = ''
@@ -778,6 +779,7 @@ class ElasticExportCoreHelper
     public function getBasePrice(
         $item,
         $idlItem,
+        string $lang = 'de',
         string $separator = '/',
         bool $compact = false,
         bool $dotPrice = false,
@@ -789,7 +791,7 @@ class ElasticExportCoreHelper
         $currency = strlen($currency) ? $currency : $this->getDefaultCurrency();
         $price = $price > 0 ? $price : (float) $idlItem['variationRetailPrice.price'];
         $lot = (int) $item['data']['unit']['content'];
-        $unitLang = $this->unitNameRepository->findByUnitId((int) $item['data']['unit']['id']);
+        $unitLang = $this->unitNameRepository->findOne((int) $item['data']['unit']['id'], $lang);
 
         if($unitLang instanceof UnitName)
         {
@@ -836,16 +838,16 @@ class ElasticExportCoreHelper
     }
 
     /**
-     * Get base price.
-     *
-     * @param  array   $item
-     * @param  float    $price
+     * Get base price list.
+     * @param array $item
+     * @param float $price
+     * @param string $lang
      * @return array
      */
-    public function getBasePriceList($item, float $price):array
+    public function getBasePriceList($item, float $price, string $lang = 'de'):array
     {
         $lot = (int)$item['data']['unit']['content'];
-        $unitLang = $this->unitNameRepository->findByUnitId((int)$item['data']['unit']['id']);
+        $unitLang = $this->unitNameRepository->findOne((int)$item['data']['unit']['id'], $lang);
 
         if($unitLang instanceof UnitName)
         {
