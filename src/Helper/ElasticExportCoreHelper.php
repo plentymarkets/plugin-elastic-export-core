@@ -884,33 +884,33 @@ class ElasticExportCoreHelper
         {
             if($settings->get('imagePosition') == self::IMAGE_FIRST)
             {
-                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image->type == 'external');
+                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image['type'] == 'external');
             }
             elseif($settings->get('imagePosition')== self::IMAGE_POSITION0 && $image['position'] == 0)
             {
-                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image->type == 'external');
+                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image['type'] == 'external');
             }
         }
         foreach($item['data']['images']['item'] as $image)
         {
             if($settings->get('imagePosition') == self::IMAGE_FIRST)
             {
-                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image->type == 'external');
+                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image['type'] == 'external');
             }
             elseif($settings->get('imagePosition')== self::IMAGE_POSITION0 && $image['position'] == 0)
             {
-                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image->type == 'external');
+                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image['type'] == 'external');
             }
         }
         foreach($item['data']['images']['all'] as $image)
         {
             if($settings->get('imagePosition') == self::IMAGE_FIRST)
             {
-                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image->type == 'external');
+                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image['type'] == 'external');
             }
             elseif($settings->get('imagePosition')== self::IMAGE_POSITION0 && $image['position'] == 0)
             {
-                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image->type == 'external');
+                return (string)$this->urlBuilderRepository->getImageUrl($image['path'], $settings->get('plentyId'), $imageType, $image['fileType'], $image['type'] == 'external');
             }
         }
 
